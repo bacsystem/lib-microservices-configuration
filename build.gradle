@@ -41,18 +41,15 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
-            groupId = 'com.bacsystem.lib'
-            artifactId = 'lib-microservices-configuration'
-            version = '0.0.1-SNAPSHOT'
         }
     }
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/${project.findProperty("gpr.repo") ?: System.getenv("GITHUB_REPOSITORY")}")
+            url = uri("https://maven.pkg.github.com/${project.findProperty("gpr.repo")}")
             credentials {
                 username = project.findProperty("gpr.user")
-                password = System.getenv("TOKEN_GITHUB")
+                password = System.getenv("PUBLIC_TOKEN_REPOSITORY")
             }
         }
     }
