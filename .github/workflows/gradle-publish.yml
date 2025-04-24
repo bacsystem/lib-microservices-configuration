@@ -33,7 +33,7 @@ jobs:
         run: ./gradlew test
 
   publish:
-    name: Publish Package (Only on PR to Master) on ${{ github.ref_name }}
+    name: Publish Package (Only on PR to Master) on ${{ github.ref_name }} in  ${{ github.event_name }} si ${{ github.base_ref }}
     runs-on: ubuntu-latest
     needs: build-and-test
     if: github.event_name == 'pull_request' && github.base_ref == 'master'
