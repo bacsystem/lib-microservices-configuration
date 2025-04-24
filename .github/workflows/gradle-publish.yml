@@ -1,4 +1,4 @@
-name: Publish en GitHub Packages
+name:  CI GitFlow lib-microservices-configuration
 
 on:
   pull_request:
