@@ -104,7 +104,16 @@ publishing {
             artifactId = project.name
             version = project.version
             description = "lib-microservices-configuration"
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionResult()
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
         }
+
     }
     repositories {
         maven {
