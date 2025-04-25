@@ -105,12 +105,12 @@ publishing {
             version = project.version
             description = "lib-microservices-configuration"
             versionMapping {
-                usage('java-api') {
+                usage("java-api") {
                     fromResolutionResult()
                 }
                 usage('java-runtime') {
                     fromResolutionResult()
-                }
+                }     
             }
         }
 
