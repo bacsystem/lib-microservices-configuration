@@ -10,7 +10,7 @@ plugins {
 }
 
 group = 'com.bacsystem.lib'
-version = '1.0.1'
+version = '2.0.1'
 
 ext {
     set('springCloudVersion', "2024.0.1")
@@ -100,9 +100,10 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
-            groupId = 'com.bacsystem.lib'
-            artifactId = 'lib-microservices-configuration'
-            version = '1.0.1'
+            groupId = group
+            artifactId = project.name
+            version = project.version
+            description = "lib-microservices-configuration"
         }
     }
     repositories {
