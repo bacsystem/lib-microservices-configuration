@@ -38,7 +38,7 @@ public class ApiService extends ResponseBuilder {
         response.setCode(code);
         response.setDateTime(new Date());
         response.setMessage(response.getMessage());
-        response.setErrors(response.getErrors());
+        response.setDetails(response.getDetails());
         return (Mono<T>) ServerResponse
                 .status(code)
                 .contentType(mediaType)
