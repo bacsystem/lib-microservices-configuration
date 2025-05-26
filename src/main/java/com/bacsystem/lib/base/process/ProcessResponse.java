@@ -49,11 +49,11 @@ public class ProcessResponse implements Serializable {
     private ProcessResult result;
 
     public static ProcessResponse success(@NonNull final ResponseBase response) {
-        return build(response, ResponseCode.SUCCESS, ProcessResult.SUCCESS, true, false);
+        return build(response, ResponseCode.OK, ProcessResult.SUCCESS, true, false);
     }
 
     public static ProcessResponse empty(@NonNull final ResponseBase response) {
-        return build(response, ResponseCode.SUCCESS, ProcessResult.SUCCESS, true, true);
+        return build(response, ResponseCode.OK, ProcessResult.SUCCESS, true, true);
     }
 
     public static ProcessResponse failure(@NonNull final ResponseBase response, @NonNull final ResponseCode responseCode) {

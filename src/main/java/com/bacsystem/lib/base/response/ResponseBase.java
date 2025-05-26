@@ -11,7 +11,6 @@ import lombok.experimental.SuperBuilder;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import java.util.Optional;
 
 /**
@@ -44,12 +43,12 @@ public class ResponseBase implements Serializable {
     @JsonProperty(value = "message")
     private String message;
 
+    @JsonProperty(value = "details")
+    private String details;
+
     @JsonProperty(value = "dateTime")
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
     private Date dateTime;
-
-    @JsonProperty(value = "errors")
-    private List<String> errors;
 
     public void setDateTime(Date dateTime) {
         this.dateTime = Optional
