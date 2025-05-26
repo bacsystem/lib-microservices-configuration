@@ -56,7 +56,7 @@ dependencyCheck {
     //data.directory = "cacheDB"
     cveValidForHours = 1
     formats = [ReportGenerator.Format.HTML, ReportGenerator.Format.JUNIT, ReportGenerator.Format.XML] as List<String>
-    suppressionFile = layout.getProjectDirectory().file("config/dependencies/dependency-check-suppressions.xml").asFile
+    suppressionFile = layout.getProjectDirectory().file("config/dependencies-check/dependency-check-suppressions.xml").asFile
     outputDirectory = layout.buildDirectory.dir("reports/dependency-check").get().asFile
     analyzers {
         experimentalEnabled = true
