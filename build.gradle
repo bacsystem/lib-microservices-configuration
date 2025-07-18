@@ -10,7 +10,7 @@ plugins {
 }
 
 group = 'com.bacsystem.lib'
-version = '2.0.1'
+version = '1.0.0'
 
 ext {
     set('springCloudVersion', "2024.0.1")
@@ -99,7 +99,8 @@ dependencies {
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+
+        register("mavenJava", MavenPublication) {
             from components.java
             groupId = group
             artifactId = project.name
@@ -109,13 +110,14 @@ publishing {
                 usage("java-api") {
                     fromResolutionResult()
                 }
-                usage('java-runtime') {
+                usage("java-runtime") {
                     fromResolutionResult()
                 }
             }
         }
 
     }
+
     repositories {
         maven {
             name = "GitHubPackages"
