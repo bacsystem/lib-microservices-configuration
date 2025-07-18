@@ -1,6 +1,8 @@
 package com.bacsystem.lib.enums;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.springframework.http.HttpStatus;
 
 /**
  * <b>ResponseCode</b>
@@ -18,13 +20,27 @@ import lombok.Getter;
  * @since 4/18/2025
  */
 @Getter
+@AllArgsConstructor
 public enum ResponseCode {
-    SUCCESS(200),
-    NOT_FOUND(404);
+
+    OK(HttpStatus.OK.value(), "", ""),
+    CREATED(HttpStatus.CREATED.value(), "", ""),
+    BAD_REQUEST(HttpStatus.BAD_REQUEST.value(), "", ""),
+    UNAUTHORIZED(HttpStatus.UNAUTHORIZED.value(), "", ""),
+    FORBIDDEN(HttpStatus.FORBIDDEN.value(), "", ""),
+    NOT_FOUND(HttpStatus.NOT_FOUND.value(), "", ""),
+    PRECONDITION_FAILED(HttpStatus.PRECONDITION_FAILED.value(), "", ""),
+    UNSUPPORTED_MEDIA_TYPE(HttpStatus.UNSUPPORTED_MEDIA_TYPE.value(), "", ""),
+    INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR.value(), "", ""),
+    NOT_IMPLEMENTED(HttpStatus.NOT_IMPLEMENTED.value(), "", ""),
+    UNPROCESSABLE_ENTITY(HttpStatus.UNPROCESSABLE_ENTITY.value(), "", ""),
+    SERVICE_UNAVAILABLE(HttpStatus.SERVICE_UNAVAILABLE.value(), "", ""),
+    GATEWAY_TIMEOUT(HttpStatus.GATEWAY_TIMEOUT.value(), "", ""),
+    NO_CONTENT(HttpStatus.NO_CONTENT.value(), "", ""),
+    ;
 
     private final int code;
+    private final String error;
+    private final String message;
 
-    ResponseCode(int code) {
-        this.code = code;
-    }
 }
