@@ -36,7 +36,7 @@ public class HandlerService extends ResponseBuilder {
         response.setCode(code);
         response.setDateTime(new Date());
         response.setMessage(response.getMessage());
-        response.setErrors(response.getErrors());
+        response.setDetails(response.getDetails());
         return (Mono<T>) Mono.just(ResponseEntity.status(code)
                 .contentType(mediaType)
                 .body(response));

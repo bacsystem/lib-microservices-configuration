@@ -29,10 +29,16 @@ public class ApplicationException extends RuntimeException {
     private static final long serialVersionUID = -846315222579408700L;
 
     private final ResponseCode responseCode;
+    private final String error;
+    private final String message;
+    private final String details;
 
-    public ApplicationException(String message, ResponseCode responseCode) {
-        super(message);
+
+    public ApplicationException(String details, ResponseCode responseCode) {
+        super(responseCode.getMessage());
         this.responseCode = responseCode;
+        this.error = responseCode.getError();
+        this.message = responseCode.getMessage();
+        this.details = details;
     }
-
 }
