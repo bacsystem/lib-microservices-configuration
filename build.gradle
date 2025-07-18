@@ -10,7 +10,7 @@ plugins {
 }
 
 group = 'com.bacsystem.lib'
-version = '2.0.1'
+version = '1.0.0'
 
 ext {
     set('springCloudVersion', "2024.0.1")
@@ -93,13 +93,13 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-suite-api'
     testRuntimeOnly 'org.junit.platform:junit-platform-runner'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-
 }
 
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+
+        register("mavenJava", MavenPublication) {
             from components.java
             groupId = group
             artifactId = project.name
@@ -109,13 +109,14 @@ publishing {
                 usage("java-api") {
                     fromResolutionResult()
                 }
-                usage('java-runtime') {
+                usage("java-runtime") {
                     fromResolutionResult()
                 }
             }
         }
 
     }
+
     repositories {
         maven {
             name = "GitHubPackages"
